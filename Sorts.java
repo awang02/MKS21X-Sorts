@@ -46,15 +46,15 @@ public class Sorts {
   *@param data the elements to be sorted.
   */
   public static void insertionSort(int[] ary){
-    int sortedIndex, currentVal;
-    for (int i = 1; i < ary.length-1; i++){
+    int sortedIndex, currentVal, idxtoSort;
+    for (int i = 1; i < ary.length; i++){
       currentVal = ary[i];
-      int x = i-1;
-      while (x > 0 && ary[x] > currentVal){
-        ary[x+1] = ary[x];
-        x -= 1;
+      idxtoSort = i-1;
+      while (idxtoSort >= 0 && ary[idxtoSort] > currentVal){
+        ary[idxtoSort+1] = ary[idxtoSort];
+        idxtoSort -= 1;
       }
-      ary[x+1] = currentVal;
+      ary[idxtoSort+1] = currentVal;
     }
   }
 
@@ -81,6 +81,7 @@ public class Sorts {
 
     //selectionSort(test_a);
     //bubbleSort(test_a);
+    insertionSort(test_a);
 
     sorted = printArray(test_a);
     System.out.println(sorted);               // [1, 2, 3, 4, 6, 6, 7, 8]
@@ -97,6 +98,7 @@ public class Sorts {
 
     //selectionSort(test_b);
     //bubbleSort(test_b);
+    insertionSort(test_b);
 
     sorted = printArray(test_b);
     System.out.println(sorted);               // [1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]
@@ -113,6 +115,7 @@ public class Sorts {
 
     //selectionSort(test_c);
     //bubbleSort(test_c);
+    insertionSort(test_c);
 
     sorted = printArray(test_c);
     System.out.println(sorted);               // [1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]
